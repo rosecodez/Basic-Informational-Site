@@ -1,9 +1,11 @@
 /* eslint-disable no-console */
-const http = require('http');
+const express = require('express');
+
+const app = express();
 const url = require('url');
 const fs = require('fs');
 
-http.createServer((req, res) => {
+app.get('/', (req, res) => {
   const q = url.parse(req.url, true);
   let filename = `.${q.pathname}`;
 
